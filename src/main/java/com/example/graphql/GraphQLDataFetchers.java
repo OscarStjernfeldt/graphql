@@ -11,7 +11,7 @@ import java.util.Map;
 @Component
 public class GraphQLDataFetchers {
 
-    private static List<Map<String, String>> books = Arrays.asList(
+    private static final List<Map<String, String>> books = Arrays.asList(
             ImmutableMap.of("id", "book-1",
                     "name", "Harry Potter and the Philosopher's Stone",
                     "pageCount", "223",
