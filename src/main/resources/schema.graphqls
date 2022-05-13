@@ -1,5 +1,7 @@
 type Query {
     bookById(id: ID): Book
+    shortUrlById(id: ID): ShortUrl
+    getAllShortUrls: [ShortUrl]
 }
 
 type Book {
@@ -13,4 +15,10 @@ type Author {
     id: ID
     firstName: String
     lastName: String
+}
+
+type ShortUrl {
+    id: ID
+    shortenedUrl: String
+    normalUrl: String
 }
