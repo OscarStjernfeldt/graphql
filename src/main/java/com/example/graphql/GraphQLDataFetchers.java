@@ -35,17 +35,17 @@ public class GraphQLDataFetchers {
 
     private static final List<Map<String, String>> posts = Arrays.asList(
             ImmutableMap.of("id", "post-1",
-                    "text", "Harry Potter and the Philosopher's Stone",
+                    "text", "text-1",
                     "userId", "userId-1",
                     "parentId", "parentId-1",
                     "created", "2022-05-17"),
             ImmutableMap.of("id", "post-2",
-                    "text", "Moby Dick",
+                    "text", "text-2",
                     "userId", "userId-2",
                     "parentId", "parentId-2",
                     "created", "2022-05-17"),
             ImmutableMap.of("id", "post-3",
-                    "text", "Interview with the vampire",
+                    "text", "text-3",
                     "userId", "userId-3",
                     "parentId", "parentId-3",
                     "created", "2022-05-17")
