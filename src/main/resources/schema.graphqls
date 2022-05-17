@@ -1,20 +1,15 @@
 type Query {
-    bookById(id: ID): Book
+    postById(id: String): Post
     shortUrlById(id: ID): ShortUrl
     getAllShortUrls: [ShortUrl]
 }
 
-type Book {
-    id: ID
-    name: String
-    pageCount: Int
-    author: Author
-}
-
-type Author {
-    id: ID
-    firstName: String
-    lastName: String
+type Post {
+    id: String
+    text: String
+    userId: String
+    parentId: String
+    created: String
 }
 
 type ShortUrl {

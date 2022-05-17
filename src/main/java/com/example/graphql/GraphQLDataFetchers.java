@@ -33,53 +33,31 @@ public class GraphQLDataFetchers {
         this.mapper = mapper;
     }
 
-    private static final List<Map<String, String>> books = Arrays.asList(
-            ImmutableMap.of("id", "book-1",
-                    "name", "Harry Potter and the Philosopher's Stone",
-                    "pageCount", "223",
-                    "authorId", "author-1"),
-            ImmutableMap.of("id", "book-2",
-                    "name", "Moby Dick",
-                    "pageCount", "635",
-                    "authorId", "author-2"),
-            ImmutableMap.of("id", "book-3",
-                    "name", "Interview with the vampire",
-                    "pageCount", "371",
-                    "authorId", "author-3")
+    private static final List<Map<String, String>> posts = Arrays.asList(
+            ImmutableMap.of("id", "post-1",
+                    "text", "Harry Potter and the Philosopher's Stone",
+                    "userId", "userId-1",
+                    "parentId", "parentId-1",
+                    "created", "2022-05-17"),
+            ImmutableMap.of("id", "post-2",
+                    "text", "Moby Dick",
+                    "userId", "userId-2",
+                    "parentId", "parentId-2",
+                    "created", "2022-05-17"),
+            ImmutableMap.of("id", "post-3",
+                    "text", "Interview with the vampire",
+                    "userId", "userId-3",
+                    "parentId", "parentId-3",
+                    "created", "2022-05-17")
     );
 
-    private static final List<Map<String, String>> authors = Arrays.asList(
-            ImmutableMap.of("id", "author-1",
-                    "firstName", "Joanne",
-                    "lastName", "Rowling"),
-            ImmutableMap.of("id", "author-2",
-                    "firstName", "Herman",
-                    "lastName", "Melville"),
-            ImmutableMap.of("id", "author-3",
-                    "firstName", "Anne",
-                    "lastName", "Rice")
-    );
-
-    public DataFetcher<Map<String, String>> getBookByIdDataFetcher() {
+    public DataFetcher<Map<String, String>> getPostByIdDataFetcher() {
         return dataFetchingEnvironment -> {
-            String bookId = dataFetchingEnvironment.getArgument("id");
-            return books
+            String postId = dataFetchingEnvironment.getArgument("id");
+            return posts
                     .stream()
-                    .filter(book -> book.get("id")
-                            .equals(bookId))
-                    .findFirst()
-                    .orElse(null);
-        };
-    }
-
-    public DataFetcher<Map<String, String>> getAuthorDataFetcher() {
-        return dataFetchingEnvironment -> {
-            Map<String, String> book = dataFetchingEnvironment.getSource();
-            String authorId = book.get("authorId");
-            return authors
-                    .stream()
-                    .filter(author -> author.get("id")
-                            .equals(authorId))
+                    .filter(post -> post.get("id")
+                            .equals(postId))
                     .findFirst()
                     .orElse(null);
         };

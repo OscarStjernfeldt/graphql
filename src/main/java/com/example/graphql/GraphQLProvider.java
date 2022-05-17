@@ -45,12 +45,10 @@ public class GraphQLProvider {
     private RuntimeWiring buildWiring() {
         return RuntimeWiring.newRuntimeWiring()
                 .type(newTypeWiring("Query")
-                        .dataFetcher("bookById", graphQLDataFetchers.getBookByIdDataFetcher())
+                        .dataFetcher("postById", graphQLDataFetchers.getPostByIdDataFetcher())
                         .dataFetcher("shortUrlById",
                                 graphQLDataFetchers.getShortUrlByIdDataFetcher())
                         .dataFetcher("getAllShortUrls", graphQLDataFetchers.getAllShortUrlDataFetcher()))
-                .type(newTypeWiring("Book")
-                        .dataFetcher("author", graphQLDataFetchers.getAuthorDataFetcher()))
                 .build();
     }
 
