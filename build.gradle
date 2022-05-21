@@ -19,6 +19,7 @@ dependencies {
     implementation 'com.google.guava:guava:31.1-jre'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.cloud:spring-cloud-starter-consul-all:3.1.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
