@@ -5,7 +5,14 @@
 
 ### Docker image:
 
-<code>docker pull ghcr.io/oscarstjernfeldt/graphql:latest</code>
+```
+docker pull ghcr.io/oscarstjernfeldt/graphql:latest
+```
+
+```
+docker run -p 8080:8080 --network <network> --name=graphql -e CONSUL_HOST=<consul> ghcr.io/oscarstjernfeldt/graphql:latest
+```
+
 </details>
 
 ------
